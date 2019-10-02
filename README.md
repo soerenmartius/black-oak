@@ -60,15 +60,15 @@ ratelimit = false
     [exchanges.bitfinex]
     filter_symbols = [] # passing an empty list will pull all available symbols!!!
     filter_resolutions = []    # passing an empty list will pull all available resolutions
-    since = "2017-01-01T00:00:00+0000"
-    until = "2019-05-20T00:00:00+0000"
+    since = "2017-01-01 00:00:00"
+    until = "2019-06-26 00:00:00"
     limit = 5000
 
     [exchanges.bitmex]
     filter_symbols = ["BTC/USD", "ETH/USD"]
     filter_resolutions = ["1m", "1h", "1d"]
-    since = "2017-01-01T00:00:00+0000"
-    until = "2019-05-20T00:00:00+0000"
+    since = "2017-01-01 00:00:00"
+    until = "2019-06-26 00:00:00"
     limit = 750
 ```
 
