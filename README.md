@@ -72,6 +72,9 @@ ratelimit = false
     limit = 750
 ```
 
+## Proxy
+It's recommended to run black-oak with a proxy server such as [luminati.io](https://luminati.io) to work around the exchange's rate limits.
+
 ## Data Integrity Check
 Black Oak comes with a script to check the data integrity of a file. This script will check line by line if the time distance
 between the current and the previous candle is accurate. If it isn't, it will return the corrupted items with some
