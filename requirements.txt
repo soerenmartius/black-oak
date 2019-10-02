@@ -1,0 +1,8 @@
+ccxt~=1.18.1180
+click~=7.0
+colorama~=0.4.1
+numpy~=1.16.4
+pandas~=0.24.2
+pytz~=2019.1
+pytest~=4.6.3
+toml~=0.10

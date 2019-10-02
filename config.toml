@@ -1,0 +1,88 @@
+[settings]
+
+debug = true
+
+# we only implemented file as a backend for now
+persistence = "file"
+
+# if a file exists look for the last entry, get the timestamp and start pulling from that timestamp instead
+# of the whole period
+append_file = true
+
+# list of proxy servers to rotate through
+proxies = [
+    ""
+]
+
+# respect the exchanges rate limit
+# set to true if you're working without proxies so you don't run into rate limit errors
+ratelimit = false
+
+# how many ohlcv candles to pull in one row ( can be overwritten per exchange )
+default_limit = 200
+
+[exchanges]
+
+# some example configurations
+
+#    [exchanges.binance]
+#    filter_symbols = ["BTC/USDT"]
+#    filter_resolutions = []
+#    since = "2017-01-01 00:00:00"
+#    until = "2019-06-26 00:00:00"
+#    limit = 500
+
+#    [exchanges.bitmex]
+#    filter_symbols = ["BTC/USD"]
+#    filter_resolutions = ["1d"]
+#    since = "2017-01-01 00:00:00"
+#    until = "2019-06-26 00:00:00"
+#    limit = 750
+
+#    [exchanges.okex3]
+#    filter_symbols = ["BTC/USDT"]
+#    filter_resolutions = ["30m"]
+#    since = "2019-09-15 00:00:00"
+#    until = "2019-09-22 00:00:00"
+#    limit = 500
+
+#    [exchanges.bitmex]
+#    filter_symbols = []
+#    filter_resolutions = []
+#    since = "2019-07-18 00:00:00"
+#    until = "2019-08-18 00:00:00"
+#    limit = 750
+
+#    [exchanges.kraken]
+#    filter_symbols = [
+#        "BTC/USD"
+#    ]
+#    filter_resolutions = ["1h"]
+#    since = "2018-01-01 00:00:00"
+#    until = "2019-05-29 00:00:00"
+#    limit = 200
+
+#    [exchanges.huobipro]
+#    filter_symbols = [
+#        "BTC/USDT"
+#    ]
+#    filter_resolutions = ["1h"]
+#    since = "2018-01-01 00:00:00"
+#    until = "2019-05-29 00:00:00"
+#    limit = 2000
+
+#    [exchanges.bitfinex2]
+#    filter_symbols = [
+#        "BTC/USD"
+#    ]
+#    filter_resolutions = ["1m"]
+#    since = "2018-01-01 00:00:00"
+#    until = "2019-05-29 00:00:00"
+#    limit = 5000
+
+#    [exchanges.gdax]
+#    filter_symbols = ["BTC/USD"]
+#    filter_resolutions = ["1h"]
+#    since = "2018-01-01 00:00:00"
+#    until = "2019-05-29 00:00:00"
+#    limit = 200
