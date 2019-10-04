@@ -46,15 +46,8 @@ class DataFetcher:
             config = toml.load(config_file)
             return config
 
-        except FileNotFoundError:
-            logging.fatal('No config.toml found')
-            sys.exit(1)
-
-        except (toml.TomlDecodeError, TypeError) as err:
-            logging.fatal(
-                'Got an error',
-                (type(err).__name__, err.args)
-            )
+        except (toml.TomlDecodeError, TypeError) as error:
+            logging.fatal(error)
             sys.exit(1)
 
     async def run(self):
@@ -118,10 +111,7 @@ class DataFetcher:
             # spawn one task per resolution for each exchange
             for resolution in config['filter_resolutions']:
                 logging.info(
-                    'Started to fetch data for %s with a resolution of %s from exchange %s',
-                    symbol,
-                    resolution,
-                    exchange.id
+                    f'Started to fetch data for {symbol} with a resolution of {resolution} from exchange {exchange.id}'
                 )
 
                 fetch_data_tasks.append(self.fetch_ohlvc_data(
@@ -209,6 +199,10 @@ class DataFetcher:
                     columns=util.ohlcv_columns(),
                 )
                 logging.info(f'Received {len(ohlcv_ts.index)} data points')
+            except ValueError as error:
+                logging.fatal(error)
+                sys.exit(1)
+
             except (
                     ccxt.ExchangeError,
                     ccxt.AuthenticationError,
@@ -217,7 +211,7 @@ class DataFetcher:
                     ccxt.DDoSProtection
             ) as error:
                 logging.error(
-                    'Got an error %s %s. Will try to send the same Request again.', type(error).__name__, error.args
+                    f'Got an error {type(error).__name__} {error.args}. Will try to send the same Request again.',
                 )
                 # skip current iteration and try again if we run into an exception
                 continue
@@ -241,7 +235,7 @@ class DataFetcher:
             since = int(ohlcv_ts['datetime'].iloc[-1]) + resolution_ms
 
             # sleep until the current candle closes if we want to fetch ongoing
-            # toDo this needs to be reworked
+            # toDo this needs to be redone
             # if since > util.current_timestamp_in_milliseconds() and until is 0:
             #     logging.info(
             #         '%s-%s-%s Waiting for %s seconds until the next candle closes',
