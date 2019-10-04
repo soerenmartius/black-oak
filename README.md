@@ -1,6 +1,12 @@
 # Black Oak 
 
+[![MIT License](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
 [![Build Status](https://travis-ci.org/soerenmartius/black-oak.svg?branch=master)](https://travis-ci.org/soerenmartius/black-oak)
+[![Known Vulnerabilities](https://snyk.io//test/github/soerenmartius/black-oak/badge.svg?targetFile=requirements.txt)](https://snyk.io//test/github/soerenmartius/black-oak?targetFile=requirements.txt)
+[![Maintainability](https://api.codeclimate.com/v1/badges/ca28e22f618d3fbdc4ae/maintainability)](https://codeclimate.com/github/soerenmartius/black-oak/maintainability)
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+
+
 
 A Service to pull and validate OHLCV Data from various Crypto Exchanges using [Python](https://www.python.org/) and [CCXT](https://github.com/ccxt/ccxt).
 
