@@ -1,0 +1,8 @@
+oak-ohlcv.iml
+.idea
+data/*
+!data/.gitkeep
+
+# pytest
+.pytest_cache
+
