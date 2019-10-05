@@ -5,6 +5,7 @@
 [![Known Vulnerabilities](https://snyk.io//test/github/soerenmartius/black-oak/badge.svg?targetFile=requirements.txt)](https://snyk.io//test/github/soerenmartius/black-oak?targetFile=requirements.txt)
 [![Maintainability](https://api.codeclimate.com/v1/badges/ca28e22f618d3fbdc4ae/maintainability)](https://codeclimate.com/github/soerenmartius/black-oak/maintainability)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsoerenmartius%2Fblack-oak.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsoerenmartius%2Fblack-oak?ref=badge_shield)
 
 
 
@@ -119,3 +120,7 @@ Run the integrity checks and write result
 ```
 
 
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsoerenmartius%2Fblack-oak.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsoerenmartius%2Fblack-oak?ref=badge_large)
