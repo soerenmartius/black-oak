@@ -1,9 +1,10 @@
 # Black Oak 
 
-[![MIT License](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
 [![Build Status](https://travis-ci.org/soerenmartius/black-oak.svg?branch=master)](https://travis-ci.org/soerenmartius/black-oak)
 [![Known Vulnerabilities](https://snyk.io//test/github/soerenmartius/black-oak/badge.svg?targetFile=requirements.txt)](https://snyk.io//test/github/soerenmartius/black-oak?targetFile=requirements.txt)
 [![Maintainability](https://api.codeclimate.com/v1/badges/ca28e22f618d3fbdc4ae/maintainability)](https://codeclimate.com/github/soerenmartius/black-oak/maintainability)
+[![MIT License](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsoerenmartius%2Fblack-oak.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsoerenmartius%2Fblack-oak?ref=badge_shield)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
 
