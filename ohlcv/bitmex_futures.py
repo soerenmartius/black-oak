@@ -16,7 +16,6 @@ futures = {
     'XRP': {'timeframes': ['1m', '5m', '1h', '1d'], 'since_year': 18},
 }
 
-
 # F = January
 # G = February
 # H = March

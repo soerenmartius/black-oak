@@ -37,6 +37,19 @@ Black Oak requires Python 3.7 or higher.
 pip install -r requirements.txt
 ```
 
+### Setup Development Environment
+#### Prerequisites
+- [Direnv](https://direnv.net/)
+  - `brew install direnv`
+- [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
+  - `brew cask install miniconda`
+
+#### Installation
+The .envrc takes care of installing the conda environment, dependencies and pre-commit
+```bash
+direnv allow
+```
+
 #### Run Black Oak
 ```bash
 ./bin/run_ohlcv_data_fetcher.sh config.toml
