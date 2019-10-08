@@ -212,11 +212,11 @@ class DataFetcher:
                 sys.exit(1)
 
             except (
-                    ccxt.ExchangeError,
-                    ccxt.AuthenticationError,
-                    ccxt.ExchangeNotAvailable,
-                    ccxt.RequestTimeout,
-                    ccxt.DDoSProtection
+                ccxt.ExchangeError,
+                ccxt.AuthenticationError,
+                ccxt.ExchangeNotAvailable,
+                ccxt.RequestTimeout,
+                ccxt.DDoSProtection
             ) as error:
                 logging.error(
                     f'Got an error {type(error).__name__} {error.args}. Will try to send the same Request again.'
