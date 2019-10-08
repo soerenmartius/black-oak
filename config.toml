@@ -1,6 +1,6 @@
 [settings]
 
-debug = true
+debug = false
 
 # we only implemented file as a backend for now
 persistence = "file"
@@ -11,7 +11,7 @@ append_file = true
 
 # list of proxy servers to rotate through
 proxies = [
-    ""
+    "http://lum-customer-amatus-zone-ohlcv-session-{rand}:flf160w9wwmm@68.183.214.33:22225"
 ]
 
 # respect the exchanges rate limit
@@ -32,11 +32,21 @@ default_limit = 200
 #    until = "2019-06-26 00:00:00"
 #    limit = 500
 
+#    # bitmex config to pull historical futures
 #    [exchanges.bitmex]
-#    filter_symbols = ["BTC/USD"]
-#    filter_resolutions = ["1d"]
-#    since = "2017-01-01 00:00:00"
-#    until = "2019-06-26 00:00:00"
+#    filter_symbols = [
+#        "ETHJ17", "ETHM17", "ETHH18", "ETHM18", "ETHU18", "ETHZ18", "ETHH19", "ETHM19", "ETHU19", "ETHZ19",
+#        "EOSM18", "EOSU18", "EOSZ18", "EOSH19", "EOSM19", "EOSU19", "EOSZ19",
+#        "BCHX17","BCHZ17","BCHF18","BCHH18","BCHM18","BCHU18","BCHZ18","BCHH19","BCHM19","BCHU19","BCHZ19",
+#        "ADAF18","ADAH18","ADAM18","ADAU18","ADAZ18","ADAH19","ADAM19","ADAU19","ADAZ19",
+#        "LTCM17","LTCU17","LTCZ17","LTCH18","LTCM18","LTCU18","LTCZ18","LTCH19","LTCM19","LTCU19","LTCZ19",
+#        "TRXU18","TRXZ18","TRXH19","TRXM19","TRXU19","TRXZ19",
+#        "XRPM17","XRPU17","XRPZ17","XRPH18","XRPM18","XRPU18","XRPZ18","XRPH19","XRPM19","XRPU19","XRPZ19","XBTZ14","XBTF15","XBTG15","XBTH15","XBTJ15","XBTK15","XBTM15","XBTN15",
+#        "XBTQ15","XBTU15","XBTZ15","XBTV15","XBTM16","XBTU16","XBTZ16","XBTH17","XBTM17","XBTU17","XBTZ17","XBTH18","XBTM18","XBTU18","XBTZ18","XBTH19","XBTM19","XBTU19","XBTZ19",
+#    ]
+#    filter_resolutions = ["1m", "5m", "1h", "1d"]
+#    since = "2015-01-01 00:00:00"
+#    until = "2019-10-07 00:00:00"
 #    limit = 750
 
 #    [exchanges.okex3]

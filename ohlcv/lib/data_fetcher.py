@@ -99,10 +99,14 @@ class DataFetcher:
         # loop through all pairs of the current exchange and add tasks to our executor
         for symbol in config['filter_symbols']:
 
+            # for idx, market in enumerate(markets):
+            #     print(market)
+            # sys.exit()
+
             # check if market exists
-            if symbol not in markets:
-                logging.fatal(f'market {symbol} does not exist on {exchange_id}')
-                await self.close_exchange(exchange)
+            # if symbol not in markets:
+            #     logging.fatal(f'market {symbol} does not exist on {exchange_id}')
+            #     await self.close_exchange(exchange)
 
             # if resolutions aren't set explicitly, pull all available resolutions
             if not config['filter_resolutions']:
@@ -176,7 +180,7 @@ class DataFetcher:
                 exchange.headers = {'Connection': 'close'}
 
             # exit the loop if we fetched the whole time series
-            if since > until and until is not 0:
+            if since > until and until:
                 break
 
             try:
@@ -189,12 +193,16 @@ class DataFetcher:
                     datetime.utcfromtimestamp(util.ms_timestamp_to_epoch_timestamp(since))
                 )
 
+                params = {'symbol': f'{symbol}'}
+                print(params)
+
                 ohlcv_ts = pd.DataFrame(
                     data=await exchange.fetch_ohlcv(
-                        symbol,
+                        'BTC/USD',
                         resolution,
                         since,
-                        limit
+                        limit,
+                        params
                     ),
                     columns=util.ohlcv_columns(),
                 )
@@ -211,7 +219,7 @@ class DataFetcher:
                     ccxt.DDoSProtection
             ) as error:
                 logging.error(
-                    f'Got an error {type(error).__name__} {error.args}. Will try to send the same Request again.',
+                    f'Got an error {type(error).__name__} {error.args}. Will try to send the same Request again.'
                 )
                 # skip current iteration and try again if we run into an exception
                 continue
