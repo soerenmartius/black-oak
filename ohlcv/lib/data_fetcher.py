@@ -187,16 +187,12 @@ class DataFetcher:
                     f'and timestamp {since} ({date})'
                 )
 
-                params = {'symbol': f'{symbol}'}
-                print(params)
-
                 ohlcv_ts = pd.DataFrame(
                     data=await exchange.fetch_ohlcv(
-                        'BTC/USD',
+                        symbol,
                         resolution,
                         since,
-                        limit,
-                        params
+                        limit
                     ),
                     columns=util.ohlcv_columns(),
                 )
