@@ -214,7 +214,7 @@ class DataFetcher:
                 # skip current iteration and try again if we run into an exception
                 continue
 
-            # if the we didn't receive any data for the current configuration, we will exit the loop
+            # exit the loop in case we didn't receive any data for the current configuration
             if len(ohlcv_ts) == 0:
                 logging.info(f'Didn"t receive any data for {len(ohlcv_ts.index)} data points')
                 break
