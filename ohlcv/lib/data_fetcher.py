@@ -216,7 +216,7 @@ class DataFetcher:
 
             # exit the loop in case we didn't receive any data for the current configuration
             if len(ohlcv_ts) == 0:
-                logging.info(f'Didn"t receive any data for {len(ohlcv_ts.index)} data points')
+                logging.info(f'Didn\'t receive any data for {symbol}_{resolution} from {exchange.id}.')
                 break
 
             # write data frame to csv
