@@ -11,6 +11,7 @@ append_file = true
 
 # list of proxy servers to rotate through
 proxies = [
+    ""
 ]
 
 # respect the exchanges rate limit
@@ -31,21 +32,12 @@ default_limit = 200
 #    until = "2019-06-26 00:00:00"
 #    limit = 500
 
-    # bitmex config to pull historical futures
-    [exchanges.bitmex]
-    filter_symbols = [
-        "ETHJ17", "ETHM17", "ETHH18", "ETHM18", "ETHU18", "ETHZ18", "ETHH19", "ETHM19", "ETHU19", "ETHZ19",
-        "EOSM18", "EOSU18", "EOSZ18", "EOSH19", "EOSM19", "EOSU19", "EOSZ19",
-        "BCHX17","BCHZ17","BCHF18","BCHH18","BCHM18","BCHU18","BCHZ18","BCHH19","BCHM19","BCHU19","BCHZ19",
-        "ADAF18","ADAH18","ADAM18","ADAU18","ADAZ18","ADAH19","ADAM19","ADAU19","ADAZ19",
-        "LTCM17","LTCU17","LTCZ17","LTCH18","LTCM18","LTCU18","LTCZ18","LTCH19","LTCM19","LTCU19","LTCZ19",
-        "TRXU18","TRXZ18","TRXH19","TRXM19","TRXU19","TRXZ19",
-        "XRPM17","XRPU17","XRPZ17","XRPH18","XRPM18","XRPU18","XRPZ18","XRPH19","XRPM19","XRPU19","XRPZ19"
-    ]
-    filter_resolutions = ["1m"]
-    since = ""
-    until = "2019-10-07 00:00:00"
-    limit = 750
+#    [exchanges.bitmex]
+#    filter_symbols = ["BTC/USD"]
+#    filter_resolutions = ["1d"]
+#    since = "2017-01-01 00:00:00"
+#    until = "2019-06-26 00:00:00"
+#    limit = 1000
 
 #    [exchanges.okex3]
 #    filter_symbols = ["BTC/USDT"]
@@ -59,7 +51,7 @@ default_limit = 200
 #    filter_resolutions = []
 #    since = "2019-07-18 00:00:00"
 #    until = "2019-08-18 00:00:00"
-#    limit = 750
+#    limit = 1000
 
 #    [exchanges.kraken]
 #    filter_symbols = [
