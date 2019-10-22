@@ -11,7 +11,6 @@ append_file = true
 
 # list of proxy servers to rotate through
 proxies = [
-    "http://lum-customer-amatus-zone-ohlcv-session-{rand}:flf160w9wwmm@68.183.214.33:22225"
 ]
 
 # respect the exchanges rate limit
