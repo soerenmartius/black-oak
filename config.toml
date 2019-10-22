@@ -1,6 +1,6 @@
 [settings]
 
-debug = true
+debug = false
 
 # we only implemented file as a backend for now
 persistence = "file"
@@ -37,7 +37,7 @@ default_limit = 200
 #    filter_resolutions = ["1d"]
 #    since = "2017-01-01 00:00:00"
 #    until = "2019-06-26 00:00:00"
-#    limit = 750
+#    limit = 1000
 
 #    [exchanges.okex3]
 #    filter_symbols = ["BTC/USDT"]
@@ -51,7 +51,7 @@ default_limit = 200
 #    filter_resolutions = []
 #    since = "2019-07-18 00:00:00"
 #    until = "2019-08-18 00:00:00"
-#    limit = 750
+#    limit = 1000
 
 #    [exchanges.kraken]
 #    filter_symbols = [

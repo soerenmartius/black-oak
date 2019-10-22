@@ -176,17 +176,15 @@ class DataFetcher:
                 exchange.headers = {'Connection': 'close'}
 
             # exit the loop if we fetched the whole time series
-            if since > until and until is not 0:
+            if since and since > until and until:
                 break
 
             try:
+                date = datetime.utcfromtimestamp(
+                    util.ms_timestamp_to_epoch_timestamp(since)) if since else 'no start date given'
                 logging.info(
-                    'Start fetching %s data points from %s for %s and timestamp %s (%s)',
-                    limit,
-                    exchange.id,
-                    symbol,
-                    since,
-                    datetime.utcfromtimestamp(util.ms_timestamp_to_epoch_timestamp(since))
+                    f'Start fetching {limit} data points from {exchange.id} for {symbol}'
+                    f'and timestamp {since} ({date})'
                 )
 
                 ohlcv_ts = pd.DataFrame(
@@ -211,10 +209,15 @@ class DataFetcher:
                     ccxt.DDoSProtection
             ) as error:
                 logging.error(
-                    f'Got an error {type(error).__name__} {error.args}. Will try to send the same Request again.',
+                    f'Got an error {type(error).__name__} {error.args}. Will try to send the same Request again.'
                 )
                 # skip current iteration and try again if we run into an exception
                 continue
+
+            # exit the loop in case we didn't receive any data for the current configuration
+            if len(ohlcv_ts) == 0:
+                logging.info(f'Didn\'t receive any data for {symbol}_{resolution} from {exchange.id}.')
+                break
 
             # write data frame to csv
             io.write_csv(
