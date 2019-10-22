@@ -184,9 +184,12 @@ class DataFetcher:
                 break
 
             try:
-                date = datetime.utcfromtimestamp(util.ms_timestamp_to_epoch_timestamp(since)) if since else 'no start date given'
+                date = datetime.utcfromtimestamp(
+                    util.ms_timestamp_to_epoch_timestamp(since)) if since else 'no start date given'
                 logging.info(
-                    f'Start fetching {limit} data points from {exchange.id} for {symbol} and timestamp {since} ({date})')
+                    f'Start fetching {limit} data points from {exchange.id} for {symbol}'
+                    f'and timestamp {since} ({date})'
+                )
 
                 params = {'symbol': f'{symbol}'}
                 print(params)
