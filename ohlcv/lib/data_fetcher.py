@@ -180,13 +180,13 @@ class DataFetcher:
                 exchange.headers = {'Connection': 'close'}
 
             # exit the loop if we fetched the whole time series
-            if since > until and until:
+            if since and since > until and until:
                 break
 
             try:
+                date = datetime.utcfromtimestamp(util.ms_timestamp_to_epoch_timestamp(since)) if since else 'no start date given'
                 logging.info(
-                    f'Start fetching {limit} data points from {exchange.id} for {symbol} and timestamp {since}'
-                    f'({datetime.utcfromtimestamp(util.ms_timestamp_to_epoch_timestamp(since))})')
+                    f'Start fetching {limit} data points from {exchange.id} for {symbol} and timestamp {since} ({date})')
 
                 params = {'symbol': f'{symbol}'}
                 print(params)
