@@ -99,14 +99,10 @@ class DataFetcher:
         # loop through all pairs of the current exchange and add tasks to our executor
         for symbol in config['filter_symbols']:
 
-            # for idx, market in enumerate(markets):
-            #     print(market)
-            # sys.exit()
-
             # check if market exists
-            # if symbol not in markets:
-            #     logging.fatal(f'market {symbol} does not exist on {exchange_id}')
-            #     await self.close_exchange(exchange)
+            if symbol not in markets:
+                logging.fatal(f'market {symbol} does not exist on {exchange_id}')
+                await self.close_exchange(exchange)
 
             # if resolutions aren't set explicitly, pull all available resolutions
             if not config['filter_resolutions']:
