@@ -91,6 +91,10 @@ ratelimit = false
     until = "2019-06-26 00:00:00"
     limit = 750
 ```
+### Explicit Since and Until Dates
+It's recommended to explicitly set since and until dates. Some Exchanges such as Binance might only return the latest
+data points if you don't explicitly set a date which goes further back in time. Therefore to say, *the since date should
+always be set.*
 
 ## Proxy
 It's recommended to run black-oak with a proxy server such as [luminati.io](https://luminati.io) to work around the exchange's rate limits.

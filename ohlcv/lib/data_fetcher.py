@@ -176,7 +176,7 @@ class DataFetcher:
                 exchange.headers = {'Connection': 'close'}
 
             # exit the loop if we fetched the whole time series
-            if since and since > until and until:
+            if since and until and since > until:
                 break
 
             try:
@@ -236,15 +236,3 @@ class DataFetcher:
 
             # update since
             since = int(ohlcv_ts['datetime'].iloc[-1]) + resolution_ms
-
-            # sleep until the current candle closes if we want to fetch ongoing
-            # toDo this needs to be redone
-            # if since > util.current_timestamp_in_milliseconds() and until is 0:
-            #     logging.info(
-            #         '%s-%s-%s Waiting for %s seconds until the next candle closes',
-            #         exchange.id,
-            #         resolution,
-            #         symbol,
-            #         since - util.ms_timestamp_to_epoch_timestamp(util.current_timestamp_in_milliseconds())
-            #     )
-            #     await asyncio.sleep(since - util.current_timestamp_in_milliseconds())
